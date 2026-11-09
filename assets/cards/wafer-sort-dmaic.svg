@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="172" viewBox="0 0 460 172">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1020"/><stop offset="1" stop-color="#110b22"/></linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0"/><stop offset=".5" stop-color="#22d3ee"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="c"><rect width="460" height="172" rx="16"/></clipPath>
+  </defs>
+  <style>
+    .sh { animation: sh 4s ease-in-out infinite; } @keyframes sh { 0% { transform: translateX(-460px); } 60%, 100% { transform: translateX(460px); } }
+    .bd { animation: bd 3s ease-in-out infinite; } @keyframes bd { 0%, 100% { stroke-opacity: .35; } 50% { stroke-opacity: .9; } }
+  </style>
+  <g clip-path="url(#c)">
+    <rect width="460" height="172" fill="url(#bg)"/>
+    <circle cx="430" cy="20" r="90" fill="#22d3ee" fill-opacity=".07"/>
+    <rect class="sh" width="460" height="3" fill="url(#shine)"/>
+  </g>
+  <rect class="bd" x="1" y="1" width="458" height="170" rx="15" fill="none" stroke="#22d3ee"/>
+  <rect x="24" y="22" width="46" height="46" rx="12" fill="#22d3ee" fill-opacity=".14" stroke="#22d3ee" stroke-opacity=".5"/>
+  <text x="47" y="54" text-anchor="middle" font-size="24">🏭</text>
+  <text x="84" y="52" font-family="'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#f1f5f9">Wafer Sort MH · DMAIC</text>
+  <rect x="348" y="128" width="94" height="24" rx="12" fill="#334155" fill-opacity=".6"/>
+  <text x="395" y="144.5" text-anchor="middle" font-family="'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, Menlo, monospace" font-size="11.5" font-weight="700" fill="#cbd5e1">● PRIVATE</text>
+  <text x="24" y="92" font-family="'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" fill="#a5b4cf">Lean-first material-handling project for a wafer</text>
+  <text x="24" y="113" font-family="'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" fill="#a5b4cf">sort floor at Analog Devices</text>
+  <rect x="24" y="128" width="47.6" height="24" rx="12" fill="#22d3ee" fill-opacity=".12" stroke="#22d3ee" stroke-opacity=".35"/><text x="47.8" y="144.5" text-anchor="middle" font-family="'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, Menlo, monospace" font-size="12" fill="#22d3ee">Lean</text>
+  <rect x="79.6" y="128" width="55" height="24" rx="12" fill="#22d3ee" fill-opacity=".12" stroke="#22d3ee" stroke-opacity=".35"/><text x="107.1" y="144.5" text-anchor="middle" font-family="'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, Menlo, monospace" font-size="12" fill="#22d3ee">DMAIC</text>
+  <rect x="142.6" y="128" width="84.60000000000001" height="24" rx="12" fill="#22d3ee" fill-opacity=".12" stroke="#22d3ee" stroke-opacity=".35"/><text x="184.9" y="144.5" text-anchor="middle" font-family="'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, Menlo, monospace" font-size="12" fill="#22d3ee">Six Sigma</text>
+</svg>
