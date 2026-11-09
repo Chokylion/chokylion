@@ -21,8 +21,8 @@
   <text x="84" y="52" font-family="'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#f1f5f9">AirPod Motion Games</text>
   <rect x="348" y="128" width="94" height="24" rx="12" fill="#334155" fill-opacity=".6"/>
   <text x="395" y="144.5" text-anchor="middle" font-family="'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, Menlo, monospace" font-size="11.5" font-weight="700" fill="#cbd5e1">● PRIVATE</text>
-  <text x="24" y="92" font-family="'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" fill="#a5b4cf">Tilt your head to play, using AirPods motion</text>
-  <text x="24" y="113" font-family="'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" fill="#a5b4cf">sensors as the controller</text>
+  <text x="24" y="92" font-family="'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" fill="#a5b4cf">Games you control by tilting your head, using</text>
+  <text x="24" y="113" font-family="'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="15" fill="#a5b4cf">AirPods motion sensors</text>
   <rect x="24" y="128" width="55" height="24" rx="12" fill="#d946ef" fill-opacity=".12" stroke="#d946ef" stroke-opacity=".35"/><text x="51.5" y="144.5" text-anchor="middle" font-family="'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, Menlo, monospace" font-size="12" fill="#d946ef">Swift</text>
   <rect x="87" y="128" width="77.2" height="24" rx="12" fill="#d946ef" fill-opacity=".12" stroke="#d946ef" stroke-opacity=".35"/><text x="125.6" y="144.5" text-anchor="middle" font-family="'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, Menlo, monospace" font-size="12" fill="#d946ef">Supabase</text>
 </svg>

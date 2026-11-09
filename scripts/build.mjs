@@ -90,12 +90,12 @@ function banner() {
 
   <!-- text -->
   <g class="fade" style="animation-delay:.6s">
-    <text x="500" y="98" font-family="${MONO}" font-size="18" fill="${CYAN}" opacity=".85">// สวัสดีครับ, hello world</text>
-    <text x="496" y="172" font-family="${FONT}" font-size="78" font-weight="800" letter-spacing="2" fill="url(#ink)">CHOKYLION</text>
+    <text x="500" y="98" font-family="${MONO}" font-size="18" fill="${CYAN}" opacity=".85">// hi, I'm</text>
+    <text x="496" y="172" font-family="${FONT}" font-size="78" font-weight="800" letter-spacing="2" fill="url(#ink)">CHOKUN</text>
   </g>
   <g class="fade" style="animation-delay:1.3s">
-    <text x="500" y="214" font-family="${FONT}" font-size="23" fill="#e2e8f0">Industrial Engineer · Game Dev · 3D &amp; Animation · Automation</text>
-    <text x="500" y="256" font-family="${MONO}" font-size="20" fill="#94a3b8">&gt; status: <tspan fill="${MAGENTA}">builds everything</tspan><tspan class="cur" fill="${CYAN}">▌</tspan></text>
+    <text x="500" y="214" font-family="${FONT}" font-size="23" fill="#e2e8f0">Industrial engineer who also makes games, 3D and animation</text>
+    <text x="500" y="256" font-family="${MONO}" font-size="20" fill="#94a3b8">&gt; github: <tspan fill="${MAGENTA}">chokylion</tspan><tspan class="cur" fill="${CYAN}">▌</tspan></text>
   </g>
 </svg>
 `;
@@ -158,22 +158,22 @@ function card({ id, cat, icon, title, desc, tags, kind }) {
 
 export const PROJECTS = [
   // engineering & tools
-  { id: "wafer-sort-dmaic", cat: "eng", icon: "🏭", title: "Wafer Sort MH · DMAIC", desc: "Lean-first material-handling project for a wafer sort floor at Analog Devices", tags: ["Lean", "DMAIC", "Six Sigma"], kind: "private" },
+  { id: "wafer-sort-dmaic", cat: "eng", icon: "🏭", title: "Wafer Sort MH · DMAIC", desc: "Material-handling improvement on a wafer sort floor at Analog Devices", tags: ["Lean", "DMAIC", "Six Sigma"], kind: "private" },
   { id: "oee-automation", cat: "eng", icon: "📈", title: "OEE & Headcount Auto", desc: "Power BI automation for OEE and headcount reporting", tags: ["Power BI", "Excel"], kind: "private" },
   { id: "wafer-probe-random", cat: "eng", icon: "🔬", title: "Wafer Probe Random", desc: "Reference random-pick machine for wafer probe sampling", tags: ["HTML", "JS"], kind: "live" },
   { id: "router-skill", cat: "eng", icon: "🧭", title: "/router skill", desc: "Multi-agent team loop: Analyst → specialists → QA → CEO review", tags: ["AI agents", "Shell"], kind: "repo" },
   { id: "gooseminton", cat: "eng", icon: "🏸", title: "Gooseminton", desc: "Badminton club tracker web app", tags: ["Vercel", "Supabase"], kind: "repo" },
   // games
   { id: "claude-racer", cat: "game", icon: "🏎️", title: "Claude Racer", desc: "Drag-strip racer with manual gear shifting, a tachometer and an upgrade shop", tags: ["Electron", "JS"], kind: "live" },
-  { id: "cholf", cat: "game", icon: "⛳", title: "Cholf", desc: "Online party mini-golf to play with friends in the browser", tags: ["Multiplayer", "JS"], kind: "live" },
-  { id: "ensense", cat: "game", icon: "🧠", title: "Ensense", desc: "Daily perception puzzle game. New challenge every day", tags: ["TypeScript", "Daily"], kind: "live" },
-  { id: "airpod-tilt", cat: "game", icon: "🎧", title: "AirPod Motion Games", desc: "Tilt your head to play, using AirPods motion sensors as the controller", tags: ["Swift", "Supabase"], kind: "private" },
+  { id: "cholf", cat: "game", icon: "⛳", title: "Cholf", desc: "Multiplayer mini-golf you play with friends in the browser", tags: ["Multiplayer", "JS"], kind: "live" },
+  { id: "ensense", cat: "game", icon: "🧠", title: "Ensense", desc: "A new perception puzzle every day", tags: ["TypeScript", "Daily"], kind: "live" },
+  { id: "airpod-tilt", cat: "game", icon: "🎧", title: "AirPod Motion Games", desc: "Games you control by tilting your head, using AirPods motion sensors", tags: ["Swift", "Supabase"], kind: "private" },
   { id: "lucky-draw", cat: "game", icon: "🎰", title: "Lucky Draw Machines", desc: "Offline lucky-draw machines: Gacha, Wafer and Halloween editions", tags: ["HTML", "JS"], kind: "live" },
   { id: "popcat", cat: "game", icon: "🎃", title: "Pop-Cat Halloween", desc: "Halloween pop-cat clicking game, backed by Supabase", tags: ["HTML", "Supabase"], kind: "repo" },
   // 3D & animation
   { id: "imi-workstation", cat: "art", icon: "🎬", title: "IMI Workstation 3D", desc: "80-second 3D teardown explainer of an inspection workstation", tags: ["3D", "Remotion"], kind: "watch" },
   { id: "stadium-seatview", cat: "art", icon: "🏟️", title: "Stadium Seat-view", desc: "Pick a seat and preview the view from it in 3D", tags: ["Three.js", "WebGL"], kind: "live" },
-  { id: "promptfung", cat: "art", icon: "🎞️", title: "promptfung · พร้อมฟัง", desc: "Thai 2D animated story series, fully made in code", tags: ["Remotion", "SVG", "TTS"], kind: "private" },
+  { id: "promptfung", cat: "art", icon: "🎞️", title: "promptfung", desc: "A Thai 2D animated story series, rendered from code", tags: ["Remotion", "SVG", "TTS"], kind: "private" },
 ];
 
 mkdirSync("assets/cards", { recursive: true });

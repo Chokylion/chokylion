@@ -171,11 +171,11 @@
 
   <!-- text -->
   <g class="fade" style="animation-delay:.6s">
-    <text x="500" y="98" font-family="'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, Menlo, monospace" font-size="18" fill="#22d3ee" opacity=".85">// สวัสดีครับ, hello world</text>
-    <text x="496" y="172" font-family="'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="78" font-weight="800" letter-spacing="2" fill="url(#ink)">CHOKYLION</text>
+    <text x="500" y="98" font-family="'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, Menlo, monospace" font-size="18" fill="#22d3ee" opacity=".85">// hi, I'm</text>
+    <text x="496" y="172" font-family="'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="78" font-weight="800" letter-spacing="2" fill="url(#ink)">CHOKUN</text>
   </g>
   <g class="fade" style="animation-delay:1.3s">
-    <text x="500" y="214" font-family="'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="23" fill="#e2e8f0">Industrial Engineer · Game Dev · 3D &amp; Animation · Automation</text>
-    <text x="500" y="256" font-family="'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, Menlo, monospace" font-size="20" fill="#94a3b8">&gt; status: <tspan fill="#d946ef">builds everything</tspan><tspan class="cur" fill="#22d3ee">▌</tspan></text>
+    <text x="500" y="214" font-family="'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="23" fill="#e2e8f0">Industrial engineer who also makes games, 3D and animation</text>
+    <text x="500" y="256" font-family="'Cascadia Code', 'Fira Code', 'JetBrains Mono', Consolas, Menlo, monospace" font-size="20" fill="#94a3b8">&gt; github: <tspan fill="#d946ef">chokylion</tspan><tspan class="cur" fill="#22d3ee">▌</tspan></text>
   </g>
 </svg>
