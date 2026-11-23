@@ -2,7 +2,8 @@
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, rmSync, mkdirSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
-import { tmpdir } from 'node:os';
+import { pathToFileURL } from 'node:url';
+import { tmpdir, homedir } from 'node:os';
 
 const EDGE = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
 const PAGES = {
@@ -15,7 +16,7 @@ const PAGES = {
   'claude-racer': 'https://chokylion.github.io/claude-racer/',
   ensense: 'https://chokylion.github.io/ensense/',
   'stadium-seatview': 'https://chokylion.github.io/stadium-seatview/',
-  popcat: 'file:///C:/Users/KWatamat/Desktop/popcat-event/index.html',
+  popcat: pathToFileURL(join(homedir(), 'Desktop', 'popcat-event', 'index.html')).href,
 };
 
 const out = ".shots", only = process.argv.slice(2);

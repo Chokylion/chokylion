@@ -5,7 +5,7 @@
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, rmSync, mkdirSync, writeFileSync, existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
-import { tmpdir } from 'node:os';
+import { tmpdir, homedir } from 'node:os';
 import { pathToFileURL } from 'node:url';
 
 const EDGE = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
@@ -40,7 +40,7 @@ export const PROJECTS = [
   { id: 'wafer-probe-random', sec: 'work', title: 'Wafer Probe Random', kind: 'live', shot: 'wafer-probe-random', url: 'chokylion.github.io/Wafer-Probe-Random',
     line: 'Random-pick machine for wafer probe sampling, shown at the ADI KAIZEN showcase.',
     tags: ['HTML', 'JS'] },
-  { id: 'imi-workstation', sec: 'work', title: 'IMI Workstation 3D', kind: 'watch', image: 'C:/Users/KWatamat/imi-workstation-video/poster-v2.jpg', url: 'chokylion.github.io/imi-workstation-video',
+  { id: 'imi-workstation', sec: 'work', title: 'IMI Workstation 3D', kind: 'watch', image: join(homedir(), 'imi-workstation-video', 'poster-v2.jpg'), url: 'chokylion.github.io/imi-workstation-video',
     line: 'A 111-second 3D explainer of an inspection workstation, made from a PowerPoint spec using only AI tools.',
     tags: ['Claude Code', '3D'] },
   // things I built for fun
