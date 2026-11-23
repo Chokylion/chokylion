@@ -1,6 +1,6 @@
-// Generates assets/banner.svg and assets/cards/*.svg.
+// Generates assets/banner.svg (the project cards come from scripts/cards.mjs).
 // Run: node scripts/build.mjs
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync } from "node:fs";
 
 const CYAN = "#22d3ee";
 const MAGENTA = "#d946ef";
@@ -94,89 +94,13 @@ function banner() {
     <text x="496" y="172" font-family="${FONT}" font-size="78" font-weight="800" letter-spacing="2" fill="url(#ink)">CHOKUN</text>
   </g>
   <g class="fade" style="animation-delay:1.3s">
-    <text x="500" y="214" font-family="${FONT}" font-size="23" fill="#e2e8f0">Industrial engineer who also makes games, 3D and animation</text>
+    <text x="500" y="214" font-family="${FONT}" font-size="23" fill="#e2e8f0">Industrial engineer who builds tools that fix slow work</text>
     <text x="500" y="256" font-family="${MONO}" font-size="20" fill="#94a3b8">&gt; github: <tspan fill="${MAGENTA}">chokylion</tspan><tspan class="cur" fill="${CYAN}">▌</tspan></text>
   </g>
 </svg>
 `;
 }
 
-// ---------- project cards ----------
-const ACCENT = { eng: CYAN, game: MAGENTA, art: AMBER };
-
-function wrap(text, max) {
-  const lines = [""];
-  for (const w of text.split(" ")) {
-    const cur = lines[lines.length - 1];
-    if ((cur + " " + w).trim().length > max) lines.push(w);
-    else lines[lines.length - 1] = (cur + " " + w).trim();
-  }
-  return lines.slice(0, 2);
-}
-
-function card({ id, cat, icon, title, desc, tags, kind }) {
-  const W = 460, H = 172, a = ACCENT[cat];
-  const badge = { live: "▶ PLAY LIVE", repo: "◆ OPEN REPO", watch: "▶ WATCH", private: "● PRIVATE" }[kind];
-  const lines = wrap(desc, 50);
-  let x = 24;
-  const chips = tags.map((t) => {
-    const w = t.length * 7.4 + 18;
-    const g = `<rect x="${x}" y="128" width="${w}" height="24" rx="12" fill="${a}" fill-opacity=".12" stroke="${a}" stroke-opacity=".35"/><text x="${x + w / 2}" y="144.5" text-anchor="middle" font-family="${MONO}" font-size="12" fill="${a}">${esc(t)}</text>`;
-    x += w + 8;
-    return g;
-  });
-  const bw = badge.length * 8 + 22;
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1020"/><stop offset="1" stop-color="#110b22"/></linearGradient>
-    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="${a}" stop-opacity="0"/><stop offset=".5" stop-color="${a}"/><stop offset="1" stop-color="${a}" stop-opacity="0"/>
-    </linearGradient>
-    <clipPath id="c"><rect width="${W}" height="${H}" rx="16"/></clipPath>
-  </defs>
-  <style>
-    .sh { animation: sh 4s ease-in-out infinite; } @keyframes sh { 0% { transform: translateX(-${W}px); } 60%, 100% { transform: translateX(${W}px); } }
-    .bd { animation: bd 3s ease-in-out infinite; } @keyframes bd { 0%, 100% { stroke-opacity: .35; } 50% { stroke-opacity: .9; } }
-  </style>
-  <g clip-path="url(#c)">
-    <rect width="${W}" height="${H}" fill="url(#bg)"/>
-    <circle cx="${W - 30}" cy="20" r="90" fill="${a}" fill-opacity=".07"/>
-    <rect class="sh" width="${W}" height="3" fill="url(#shine)"/>
-  </g>
-  <rect class="bd" x="1" y="1" width="${W - 2}" height="${H - 2}" rx="15" fill="none" stroke="${a}"/>
-  <rect x="24" y="22" width="46" height="46" rx="12" fill="${a}" fill-opacity=".14" stroke="${a}" stroke-opacity=".5"/>
-  <text x="47" y="54" text-anchor="middle" font-size="24">${icon}</text>
-  <text x="84" y="52" font-family="${FONT}" font-size="22" font-weight="700" fill="#f1f5f9">${esc(title)}</text>
-  <rect x="${W - bw - 18}" y="128" width="${bw}" height="24" rx="12" fill="${kind === "private" ? "#334155" : a}" fill-opacity="${kind === "private" ? ".6" : ".95"}"/>
-  <text x="${W - bw / 2 - 18}" y="144.5" text-anchor="middle" font-family="${MONO}" font-size="11.5" font-weight="700" fill="${kind === "private" ? "#cbd5e1" : "#0b1020"}">${badge}</text>
-  ${lines.map((l, k) => `<text x="24" y="${92 + k * 21}" font-family="${FONT}" font-size="15" fill="#a5b4cf">${esc(l)}</text>`).join("\n  ")}
-  ${chips.join("\n  ")}
-</svg>
-`;
-}
-
-export const PROJECTS = [
-  // engineering & tools
-  { id: "wafer-sort-dmaic", cat: "eng", icon: "🏭", title: "Wafer Sort MH · DMAIC", desc: "Material-handling improvement on a wafer sort floor at Analog Devices", tags: ["Lean", "DMAIC", "Six Sigma"], kind: "private" },
-  { id: "oee-automation", cat: "eng", icon: "📈", title: "OEE & Headcount Auto", desc: "Power BI automation for OEE and headcount reporting", tags: ["Power BI", "Excel"], kind: "private" },
-  { id: "wafer-probe-random", cat: "eng", icon: "🔬", title: "Wafer Probe Random", desc: "Reference random-pick machine for wafer probe sampling", tags: ["HTML", "JS"], kind: "live" },
-  { id: "router-skill", cat: "eng", icon: "🧭", title: "/router skill", desc: "Multi-agent team loop: Analyst → specialists → QA → CEO review", tags: ["AI agents", "Shell"], kind: "repo" },
-  { id: "gooseminton", cat: "eng", icon: "🏸", title: "Gooseminton", desc: "Badminton club tracker web app", tags: ["Vercel", "Supabase"], kind: "repo" },
-  // games
-  { id: "claude-racer", cat: "game", icon: "🏎️", title: "Claude Racer", desc: "Drag-strip racer with manual gear shifting, a tachometer and an upgrade shop", tags: ["Electron", "JS"], kind: "live" },
-  { id: "cholf", cat: "game", icon: "⛳", title: "Cholf", desc: "Multiplayer mini-golf you play with friends in the browser", tags: ["Multiplayer", "JS"], kind: "live" },
-  { id: "ensense", cat: "game", icon: "🧠", title: "Ensense", desc: "A new perception puzzle every day", tags: ["TypeScript", "Daily"], kind: "live" },
-  { id: "airpod-tilt", cat: "game", icon: "🎧", title: "AirPod Motion Games", desc: "Games you control by tilting your head, using AirPods motion sensors", tags: ["Swift", "Supabase"], kind: "private" },
-  { id: "lucky-draw", cat: "game", icon: "🎰", title: "Lucky Draw Machines", desc: "Offline lucky-draw machines: Gacha, Wafer and Halloween editions", tags: ["HTML", "JS"], kind: "live" },
-  { id: "popcat", cat: "game", icon: "🎃", title: "Pop-Cat Halloween", desc: "Halloween pop-cat clicking game, backed by Supabase", tags: ["HTML", "Supabase"], kind: "repo" },
-  // 3D & animation
-  { id: "imi-workstation", cat: "art", icon: "🎬", title: "IMI Workstation 3D", desc: "80-second 3D teardown explainer of an inspection workstation", tags: ["3D", "Remotion"], kind: "watch" },
-  { id: "stadium-seatview", cat: "art", icon: "🏟️", title: "Stadium Seat-view", desc: "Pick a seat and preview the view from it in 3D", tags: ["Three.js", "WebGL"], kind: "live" },
-  { id: "promptfung", cat: "art", icon: "🎞️", title: "promptfung", desc: "A Thai 2D animated story series, rendered from code", tags: ["Remotion", "SVG", "TTS"], kind: "private" },
-];
-
-mkdirSync("assets/cards", { recursive: true });
+// The project cards are screenshots now: see scripts/shots.mjs and scripts/cards.mjs.
 writeFileSync("assets/banner.svg", banner());
-for (const p of PROJECTS) writeFileSync(`assets/cards/${p.id}.svg`, card(p));
-console.log(`banner + ${PROJECTS.length} cards written`);
+console.log("banner written");
